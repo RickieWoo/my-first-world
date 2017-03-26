@@ -20,6 +20,20 @@ summary {
 div{
 	color: #999;
 }
+h1 {
+    display: block;
+    font-size: 2em;
+    margin: auto;
+    color: rgba(0, 0, 0, 0.24);
+    /* float: none; */
+    padding: 1em;
+    padding-bottom: 0.5em;
+    transform: translate;
+    /* -webkit-margin-after: 0.67em; */
+    /* -webkit-margin-start: 0px; */
+    /* -webkit-margin-end: 0px; */
+    font-weight: bold;
+}
 a {
   background-color: transparent;
 }
@@ -89,9 +103,25 @@ a:link{
 	height: 20%;
 	background-color: rgba(219, 219, 219, 0.22);
 	float: left;
-	
+	margin: auto;
 }
 
 .article-box-even{
 	background-color: rgba(232, 232, 232, 0.74);
+}
+.article-content-view{
+	display: block;
+	overflow: auto;
+	padding: 0 0.7em;
+	width: inherit;
+	height: 6em;
+	margin: auto;
+}
+.time-stamp{
+	
+float: right;
+	
+display: block;
+	
+padding: 0 1em 1em;
 }
