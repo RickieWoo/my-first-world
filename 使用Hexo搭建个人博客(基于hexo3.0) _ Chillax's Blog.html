@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://opiece.me/2015/04/09/hexo-guide/ -->
+<html class="theme-next mist use-motion gr__opiece_me"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/query"></script><script src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/st.js.下载"></script>
+  
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/jquery.fancybox.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/css" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/main.css" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="hexo,">
+
+
+
+
+
+  <link rel="alternate" href="http://opiece.me/atom.xml" title="Chillax&#39;s Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://opiece.me/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="前言由于本人最近已经将博客主题转为NexT，因此本教程的内容已经不能参考本博客现在的主题。但是，本教程仍然适用于初学者学习，为了方便初学者参考，特将Concise主题(写教程时的主题)的大致框架截图如下。——2016.03.13">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Hexo搭建个人博客(基于hexo3.0)">
+<meta property="og:url" content="http://opiece.me/2015/04/09/hexo-guide/index.html">
+<meta property="og:site_name" content="Chillax&#39;s Blog">
+<meta property="og:description" content="前言由于本人最近已经将博客主题转为NexT，因此本教程的内容已经不能参考本博客现在的主题。但是，本教程仍然适用于初学者学习，为了方便初学者参考，特将Concise主题(写教程时的主题)的大致框架截图如下。——2016.03.13">
+<meta property="og:image" content="/images/article/hexo-guide-1.png">
+<meta property="og:image" content="/images/article/hexo-guide-2.png">
+<meta property="og:image" content="/images/article/hexo-guide-3.png">
+<meta property="og:image" content="/images/article/hexo-guide-4.png">
+<meta property="og:image" content="/images/article/hexo-guide-5.png">
+<meta property="og:image" content="/images/article/hexo-guide-6.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Hexo搭建个人博客(基于hexo3.0)">
+<meta name="twitter:description" content="前言由于本人最近已经将博客主题转为NexT，因此本教程的内容已经不能参考本博客现在的主题。但是，本教程仍然适用于初学者学习，为了方便初学者参考，特将Concise主题(写教程时的主题)的大致框架截图如下。——2016.03.13">
+
+
+
+<script async="" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/st.js(1).下载"></script><script src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/stats"></script><script src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hm.js.下载"></script><script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 11406932,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://opiece.me/2015/04/09/hexo-guide/">
+
+  <title> 使用Hexo搭建个人博客(基于hexo3.0) | Chillax's Blog </title>
+<script type="text/javascript" async="" id="duoshuo-script" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/embed.js.下载" charset="UTF-8"></script><style type="text/css">.fancybox-margin{margin-right:17px;}</style><link type="text/css" rel="stylesheet" href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/embed.default.css"><link rel="stylesheet" type="text/css" href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/new_embed-59af57b2801d7d8cca80ebe043cdcf80.css"><style type="text/css">.st-install-gngcYKRA61Ss_pfLd6uz .st-ui-result .st-ui-type-heading { color:#0089d7 !important }
+.st-install-gngcYKRA61Ss_pfLd6uz .st-ui-result em {font-style:normal; font-weight:bold; background-color:#f6fcfe !important}</style></head>
+
+<div class="gr-top-z-index gr-top-zero" tabindex="-1"><div class="_970ef1-hoverMenu" style="transform:translate(NaNpx, NaNpx);" data-grammarly-reactid=".2"><div class="_970ef1-panel" data-grammarly-reactid=".2.0"><div class="_970ef1-tooltip _970ef1-tooltip_hidden undefined" data-grammarly-reactid=".2.0.0"></div><div class="_970ef1-buttonArea" data-grammarly-reactid=".2.0.1"><div class="_970ef1-btn _970ef1-btn_disable" tabindex="-1" data-grammarly-reactid=".2.0.1.0"></div></div><div class="_970ef1-line" data-grammarly-reactid=".2.0.3"></div><div class="_970ef1-buttonArea" data-grammarly-reactid=".2.0.5"><div class="_970ef1-btn _970ef1-btn_grammarly" data-action="editor" tabindex="-1" data-grammarly-reactid=".2.0.5.0"></div></div></div></div></div><div style="visibility: hidden; top: -9999px; position: absolute; opacity: 0;"><div class="_970ef1-hoverMenu" style="transform:translate(NaNpx, NaNpx);" data-grammarly-reactid=".1"><div class="_970ef1-panel" data-grammarly-reactid=".1.0"><div class="_970ef1-tooltip _970ef1-tooltip_hidden undefined" data-grammarly-reactid=".1.0.0"></div><div class="_970ef1-buttonArea" data-grammarly-reactid=".1.0.1"><div class="_970ef1-btn _970ef1-btn_disable" tabindex="-1" data-grammarly-reactid=".1.0.1.0"></div></div><div class="_970ef1-line" data-grammarly-reactid=".1.0.3"></div><div class="_970ef1-buttonArea" data-grammarly-reactid=".1.0.5"><div class="_970ef1-btn _970ef1-btn_grammarly" data-action="editor" tabindex="-1" data-grammarly-reactid=".1.0.5.0"></div></div></div></div></div><body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans" data-gr-c-s-loaded="true" class="" style="padding-right: 320px;">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?384cc9dde1da4d450d73f78e8d7f98e4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=44254927";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="http://opiece.me/" class="brand" rel="start" style="opacity: 1;">
+      <span class="logo-line-before"><i class="" style="transform: translateX(100%);"></i></span>
+      <span class="site-title" style="opacity: 1; top: 0px;">Chillax's Blog</span>
+      <span class="logo-line-after"><i class="" style="transform: translateX(-100%);"></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle" style="opacity: 1; top: 0px;">Goals determine what you are going to be</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home" style="opacity: 1; transform: translateY(0px);">
+          <a href="http://opiece.me/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives" style="opacity: 1; transform: translateY(0px);">
+          <a href="http://opiece.me/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags" style="opacity: 1; transform: translateY(0px);">
+          <a href="http://opiece.me/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-message" style="opacity: 1; transform: translateY(0px);">
+          <a href="http://opiece.me/message" rel="section">
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search" style="opacity: 1; transform: translateY(0px);">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" autocomplete="off" autocorrect="off" autocapitalize="off">
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'gngcYKRA61Ss_pfLd6uz','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article" style="opacity: 1; display: block; transform: translateY(0px);">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用Hexo搭建个人博客(基于hexo3.0)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-04-09T13:32:09+08:00" content="2015-04-09">
+              2015-04-09
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="http://opiece.me/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="http://opiece.me/2015/04/09/hexo-guide/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/09/hexo-guide/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/04/09/hexo-guide/" class="leancloud_visitors" data-flag-title="使用Hexo搭建个人博客(基于hexo3.0)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count">27150</span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言">前言</h2><p>由于本人最近已经将博客主题转为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a>，因此本教程的内容已经不能参考本博客现在的主题。但是，本教程仍然适用于初学者学习，为了方便初学者参考，特将Concise主题(写教程时的主题)的大致框架截图如下。<br>——2016.03.13<br><a id="more"></a><br><a href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-1.png" class="fancybox" rel="group"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-1.png" alt=""></a><br><a href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-2.png" class="fancybox" rel="group"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-2.png" alt=""></a><br><a href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-3.png" class="fancybox" rel="group"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-3.png" alt=""></a></p>
+<h2 id="动机">动机</h2><p>前些天，自己刚刚接触hexo，并用hexo搭建了自己的博客，对hexo的强大搭建博客能力感到赞叹。用我的实际体验来说，你只要是有点计算机基础的人，完全可以轻松的使用hexo搭建起自己的博客。你要是用过github、oschina、gitcafe其中的一样，那对你来说，就可以分分钟上手了。其实网上使用hexo搭建博客的教程多的是，我自己也是跟着<a href="http://zipperary.com/" target="_blank" rel="external">zippera</a>的教程搭建的博客，那么我还写这篇博客是出于什么目的呢？原因如下：第一，网上的教程大多比较老了，我在搭建的过程中就遇到过不少问题，因此我觉得有必要写个适配hexo3.0的教程。第二，如你所见，本博客由于刚刚起步，博文少的可怜，因此写这篇博文也可以充场子，免得太冷清。第三，算是自己的个人笔记吧，我本人对于刚学的东西都喜欢用博文记录，免得以后自己忘掉。</p>
+<h2 id="正文">正文</h2><p>首先声明，本教程所针对的是windows用户。</p>
+<h3 id="安装Git">安装Git</h3><p>下载并安装<a href="http://pan.baidu.com/s/1miqAjlY" target="_blank" rel="external">git</a>，如果你想了解点Git的基础命令，我推荐以下博文：<a href="http://opiece.me/2015/04/06/git-basic-commands/" target="_blank" rel="external">Git常用的基础命令</a>，<a href="http://blog.csdn.net/v123411739/article/details/44071059/" target="_blank" rel="external">史上最全github使用方法：github入门到精通</a>,当然即使你不懂Git的命令，跟着本博文走，也完全没问题。</p>
+<h3 id="安装Node-js">安装Node.js</h3><p>下载并安装<a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a>，此处我建议安装完毕后重启电脑，因为我当初安装完没重启，结果后面使用命令安装hexo的时候，提示无效的命令，因此推荐重启。当然，你也可以选择等到后面遇到问题，再选择重启。</p>
+<h3 id="安装hexo">安装hexo</h3><p>安装前先介绍几个hexo常用的命令,#后面为注释。<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g <span class="comment">#完整命令为hexo generate，用于生成静态文件</span></span><br><span class="line">$ hexo s <span class="comment">#完整命令为hexo server，用于启动服务器，主要用来本地预览</span></span><br><span class="line">$ hexo d <span class="comment">#完整命令为hexo deploy，用于将本地文件发布到github上</span></span><br><span class="line">$ hexo n <span class="comment">#完整命令为hexo new，用于新建一篇文章</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>鼠标右键任意地方，选择Git Bash，使用以下命令安装hexo<strong>（ps：以下命令中的$符号只为了让教程和实际看起来一致，实际输入命令只需输入$ 后面的命令即可）</strong><br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果之后在使用的过程中，遇到以下的错误<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found : github</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>则运行以下命令,或者你直接先运行这个命令更好。<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>接下来创建放置博客文件的文件夹：hexo文件夹。在自己想要的位置创建文件夹，如我hexo文件夹的位置为<code>E:\hexo</code>，名字和地方可以自由选择，当然最好不要放在中文路径下，至于原因，我想很多人懂得。之后进入文件夹，即<code>E:\hexo内</code>，点击鼠标右键，选择Git Bash，执行以下命令，Hexo会自动在该文件夹下下载搭建网站所需的所有文件。<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>安装依赖包<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>让我们看看刚刚下载的hexo文件带来了什么，在<code>E:\hexo</code>内执行以下命令，<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>然后用浏览器访问<code>http://localhost:4000/</code>，此时，你应该看到了一个漂亮的博客了，当然这个博客只是在本地的，别人是看不到的，hexo3.0使用的默认主题是landscape。轻轻松松就看到了一点成果，是不是很激动，这就是hexo的强大之处，这个本地预览的功能，我真是爱不释手。</p>
+<h3 id="注册Github帐号">注册Github帐号</h3><p>已经有Github帐号跳过此步，首先进入<a href="https://github.com/" target="_blank" rel="external">Github</a>进行注册，用户名、邮箱和密码之后都需要用到，自己记好。</p>
+<h3 id="创建repository">创建repository</h3><p>repository相当于一个仓库，用来放置你的代码文件。首先，登陆进入<a href="https://github.com/" target="_blank" rel="external">Github</a>，并进入个人页面，选择<code>Repositories</code>(下图第一个红圈的地方)，然后<code>New</code>一个repository(下图第二个红圈的地方)<br><a href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-4.png" class="fancybox" rel="group"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-4.png" alt=""></a><br>创建时，只需要填写Repository name即可，当然这个名字的格式必须为<code>youname.github.io</code>，例如我的为huangjunhui.github.io<br><a href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-5.png" class="fancybox" rel="group"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-5.png" alt=""></a></p>
+<h3 id="部署本地文件到github">部署本地文件到github</h3><p>既然Repository已经创建了，当然是先把博客放到<code>Github</code>上去看看效果。编辑<code>E：\hexo</code>下的<code>_config.yml</code>文件，建议使用Notepad++。<br>在<code>_config.yml</code>最下方，添加如下配置(命令中的第一个huangjunhui为Github的用户名,第二个huangjunhui为之前New的Repository的名字,记得改成自己的。另外记得一点，hexo的配置文件中任何’:’后面都是带一个空格的),如果配置以下命令出现<code>ERROR Deployer not found : github</code>，则参考上文的解决方法。<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: http://github.com/huangjunhui/huangjunhui.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>配置好<code>_config.yml</code>并保存后，执行以下命令部署到Github上。如果你是第一次使用Github或者是已经使用过，但没有配置过SSH，则可能需要配置一下，具体方法<a href="http://blog.csdn.net/v123411739/article/details/44071059/" target="_blank" rel="external">史上最全github使用方法：github入门到精通</a>里面有介绍到。<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>执行上面的第二个命令，可能会要你输入用户名和密码，皆为注册Github时的数据，输入密码是不显示任何东西的，输入完毕回车即可。<br>此时，我们的博客已经搭建起来，并发布到Github上了，在浏览器访问<code>huangjunhui.github.io</code>就能看到自己的博客了。第一次访问刚地址，可能访问不了，您可以在几分钟后进行访问，一般不超过10分钟。</p>
+<h3 id="hexo的配置文件">hexo的配置文件</h3><p>hexo里面有两个常用到的配置文件，分别是整个博客的配置文件<code>E:\hexo\_config.yml</code>和主题的配置文件<code>E:\hexo\themes\light\_config.yml</code>，此地址是对于我来说，hexo3.0使用的默认主题是landscape，因此你们的地址应该是<code>E:\hexo\themes\landscape\_config.yml</code>，下文所有讲到light的地方，你们将之换为自己的主题名即可。本博客使用的主题是基于light改善的主题，目前还在完善中，如果完成的比较好，以后可能发布在<code>github</code>上。如果你想自己挑选喜欢的主题，hexo官方提供了12个<a href="http://hexo.io/themes/" target="_blank" rel="external">主题</a>供你自己选择，使用方法很简单，点击自己想要的主题，进入该主题的Repository，使用Git将主题clone到本地，然后将整个文件夹复制到<code>E:\hexo\themes</code>文件夹下，将<code>E"\hexo\_config.yml</code>里的theme名字改为自己下载的主题的文件夹名即可。<br>接下来介绍整个博客的配置文件。<br>E:\hexo_config.yml<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: http://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site	这下面的几项配置都很简单，你看我的博客就知道分别是什么意思</span></span><br><span class="line">title: Chillax blog	<span class="comment">#博客名</span></span><br><span class="line">subtitle: Goals determine what you are going to be	<span class="comment">#副标题</span></span><br><span class="line">description: Goals determine what you are going to be <span class="comment">#用于搜索，没有直观表现</span></span><br><span class="line">author: huangjunhui	<span class="comment">#作者</span></span><br><span class="line">language: zh-CN	<span class="comment">#语言</span></span><br><span class="line">timezone: 	<span class="comment">#时区，此处不填写，hexo会以你目前电脑的时区为默认值</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL	暂不配置，使用默认值</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line">url: http://opiece.me  <span class="comment">#域名</span></span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Directory		暂不配置，使用默认值</span></span><br><span class="line"><span class="built_in">source</span>_dir: <span class="built_in">source</span></span><br><span class="line">public_dir: public</span><br><span class="line">tag_dir: tags</span><br><span class="line">archive_dir: archives</span><br><span class="line">category_dir: categories</span><br><span class="line">code_dir: downloads/code</span><br><span class="line">i18n_dir: :lang</span><br><span class="line">skip_render:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing	文章布局等，使用默认值</span></span><br><span class="line">new_post_name: :title.md <span class="comment"># File name of new posts</span></span><br><span class="line">default_layout: post</span><br><span class="line">titlecase: <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line">external_link: <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line">filename_<span class="keyword">case</span>: <span class="number">0</span></span><br><span class="line">render_drafts: <span class="literal">false</span></span><br><span class="line">post_asset_folder: <span class="literal">false</span></span><br><span class="line">relative_link: <span class="literal">false</span></span><br><span class="line">future: <span class="literal">true</span></span><br><span class="line">highlight:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  line_number: <span class="literal">true</span></span><br><span class="line">  tab_replace:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Category &amp; Tag	暂不配置，使用默认值</span></span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format	时间格式，使用默认值</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line">date_format: YYYY-MM-DD</span><br><span class="line">time_format: HH:mm:ss</span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination	</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line">per_page: <span class="number">10</span>	<span class="comment">#每页显示的文章数，0表示不分页</span></span><br><span class="line">pagination_dir: page</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions	插件配置，暂时不配置</span></span><br><span class="line"><span class="comment">## Plugins: http://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: http://hexo.io/themes/</span></span><br><span class="line">plugins:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">theme: light	<span class="comment">#使用的主题，即：E:\myblog\themes文件夹下的主题文件夹名</span></span><br><span class="line"></span><br><span class="line">feed:	<span class="comment">#之后配置rss会用，使用如下配置即可</span></span><br><span class="line">  <span class="built_in">type</span>: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  <span class="built_in">limit</span>: <span class="number">20</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment	用于部署到github，之前已经配置过</span></span><br><span class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></span><br><span class="line"></span><br><span class="line">deploy: </span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: http://github.com/huangjunhui/huangjunhui.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>按照自己的意愿修改完后，执行<code>hexo g</code>，<code>hexo s</code>，打开<code>localhost:4000</code>看看效果。<br><code>E:\hexo\themes\light\_config.yml</code>，此处针对<code>Concise</code>主题，如果使用其他主题，请查看自己主题的帮助文档，<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT主题帮助文档</a><br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">menu:	<span class="comment">#博客右上角的菜单栏，暂时使用默认值</span></span><br><span class="line">  首页: /</span><br><span class="line">  归档: /archives</span><br><span class="line">  关于: /about</span><br><span class="line">  </span><br><span class="line"><span class="comment">#该类对应于E:\hexo\themes\light\layout\_widget下的文件</span></span><br><span class="line">widgets:	<span class="comment">#站点右边栏，可以参照我的博客看，暂时使用默认值</span></span><br><span class="line">- intro		<span class="comment">#简介</span></span><br><span class="line">- search		<span class="comment">#搜索</span></span><br><span class="line">- category	<span class="comment">#分类</span></span><br><span class="line">- tagcloud	<span class="comment">#标签云</span></span><br><span class="line">- weibo		<span class="comment">#微博</span></span><br><span class="line">- blogroll	<span class="comment">#友情链接</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">excerpt_link: Read more	<span class="comment">#文章下的Read more，可以改为'阅读全文'</span></span><br><span class="line"></span><br><span class="line">plugins:	<span class="comment">#插件，暂时使用默认值</span></span><br><span class="line"></span><br><span class="line">twitter:	<span class="comment">#twitter</span></span><br><span class="line">  username:</span><br><span class="line">  show_replies: <span class="literal">false</span></span><br><span class="line">  tweet_count: <span class="number">5</span></span><br><span class="line"></span><br><span class="line">addthis:	<span class="comment">#SNS分享，暂时使用默认</span></span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  pubid:</span><br><span class="line">  facebook: <span class="literal">true</span></span><br><span class="line">  twitter: <span class="literal">true</span></span><br><span class="line">  google: <span class="literal">true</span></span><br><span class="line">  pinterest: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">fancybox: <span class="literal">true</span>	<span class="comment">#图片效果，使用默认值</span></span><br><span class="line"></span><br><span class="line">google_analytics: </span><br><span class="line">rss: 	<span class="comment">#生成RSS，暂时使用默认值</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>以上的改动不多，大多是介绍下功能。</p>
+<h3 id="发表一篇文章">发表一篇文章</h3><p>1.在Git Bash执行命令：<code>$ hexo new "my new post"</code><br>2.在<code>E:\hexo\source\_post</code>中打开my-new-post.md，打开方式使用记事本或notepad++。<br>hexo中写文章使用的是Markdown，没接触过的可以看下<a href="http://wowubuntu.com/markdown/#p" target="_blank" rel="external">Markdown语法说明</a>,<a href="http://lutaf.com/markdown-simple-usage.htm" target="_blank" rel="external">一分钟学会Markdown</a><br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: my new post <span class="comment">#可以改成中文的，如“新文章”</span></span><br><span class="line">date: <span class="number">2015</span>-<span class="number">04</span>-<span class="number">08</span> <span class="number">22</span>:<span class="number">56</span>:<span class="number">29</span> <span class="comment">#发表日期，一般不改动</span></span><br><span class="line">categories: blog <span class="comment">#文章文类</span></span><br><span class="line">tags: [博客，文章] <span class="comment">#文章标签，多于一项时用这种格式，只有一项时使用tags: blog</span></span><br><span class="line">---</span><br><span class="line"><span class="comment">#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上</span></span><br><span class="line">&lt;!--more--&gt;<span class="comment">#在&lt;!--more--&gt;之前的内容会显示在首页，之后的内容会被隐藏，当游客点击Read more才能看到。</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>写完文章后，你可以使用1.<code>$ hexo g</code>生成静态文件。2.<code>$ hexo s</code>在本地预览效果。3.<code>hexo d</code>同步到github，然后使用<a href="http://huangjunhui.github.io/" target="_blank" rel="external">http://huangjunhui.github.io</a>进行访问。</p>
+<h3 id="另一种发布到github的配置">另一种发布到github的配置</h3><p>有不少人反馈说无法发布到github，现在提供另一种配置方式，这种方式在发布时不需要输入密码，也是我目前使用的方法，配置代码如下。<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:huangjunhui/huangjunhui.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>这种配置方式，需要配置SSH key，教程如下：<br>鼠标右键任意地方，选择Git Bash，<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"your_email@youremail.com"</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>后面的your_email@youremail.com改为你的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在<code>C:\Users\Administrator</code>下生成.ssh文件夹，进入该文件夹，打开id_rsa.pub，复制里面的key。<br>回到github，进入Settings，选择SSH and GPG Keys -&gt; New SSH Key，title随便填，粘贴key。为了验证是否成功，在git bash下输入：<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated， but GitHub does not provide shell access ，这就表示已成功连上github。<br>接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"your name"</span>  </span><br><span class="line">$ git config --global user.email <span class="string">"your_email@youremail.com"</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p><a href="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-6.png" class="fancybox" rel="group"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hexo-guide-6.png" alt=""></a></p>
+<h3 id="参考">参考</h3><p><a href="http://zipperary.com/2013/05/28/hexo-guide-2/" target="_blank" rel="external">hexo系列教程：（二）搭建hexo博客</a><br><a href="http://zipperary.com/2013/05/29/hexo-guide-3/" target="_blank" rel="external">hexo系列教程：（三）hexo博客的配置、使用</a></p>
+<h2 id="总结">总结</h2><p>到现在为止，我们已经搭建起博客，并能写文章了，一个具备基本功能的博客已经实现了。由于本文是博主工作之余写的，比较仓促，难免有错误，欢迎指正。后面的文章将介绍本博客使用到的一些实用的功能，如访问次数，新浪微博秀，RSS，多说评论等，喜欢这些功能的朋友可以继续跟随。</p>
+<p>本文非常详细的介绍了搭建过程，但是如果您还是在搭建的过程中碰到了问题，欢迎您在下面留言探讨。亦或是您觉得博主码文辛苦，想评论鼓励，博主也表示欢迎。</p>
+<p><strong>版权声明：本文为博主原创文章，转载请注明出处 <a href="http://opiece.me/" title="opiece.me" target="_blank" rel="external">Chillax’s Blog</a></strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="http://opiece.me/tags/hexo/" rel="tag">#hexo</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="http://opiece.me/2015/04/06/git-basic-commands/" rel="next" title="Git常用的基础命令">
+                <i class="fa fa-chevron-left"></i> Git常用的基础命令
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="http://opiece.me/2015/04/09/hexo-guide-2/" rel="prev" title="hexo搭建博客的实用功能(上)(基于hexo3.0)">
+                hexo搭建博客的实用功能(上)(基于hexo3.0) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/04/09/hexo-guide/" data-title="使用Hexo搭建个人博客(基于hexo3.0)" data-content="" data-url="http://opiece.me/2015/04/09/hexo-guide/" id="ds-share">
+  <div class="ds-share-inline" id="ds-reset">
+    <ul class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more flat" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone flat" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt flat" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more" style="display: none;"><div class="ds-share-icons"> <div class="ds-share-icons-inner"> <ul class="ds-share-icons-16">  <li> <a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">新浪微博</a> </li>  <li> <a class="ds-qzone flat" href="javascript:void(0);" data-service="qzone">QQ空间</a> </li>  <li> <a class="ds-sohu flat" href="javascript:void(0);" data-service="sohu">搜狐微博</a> </li>  <li> <a class="ds-renren flat" href="javascript:void(0);" data-service="renren">人人网</a> </li>  <li> <a class="ds-netease flat" href="javascript:void(0);" data-service="netease">undefined</a> </li>  <li> <a class="ds-qqt flat" href="javascript:void(0);" data-service="qqt">腾讯微博</a> </li>  <li> <a class="ds-kaixin flat" href="javascript:void(0);" data-service="kaixin">开心网</a> </li>  <li> <a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣网</a> </li>  <li> <a class="ds-qq flat" href="javascript:void(0);" data-service="qq">QQ</a> </li>  <li> <a class="ds-meilishuo flat" href="javascript:void(0);" data-service="meilishuo">undefined</a> </li>  <li> <a class="ds-mogujie flat" href="javascript:void(0);" data-service="mogujie">undefined</a> </li>  <li> <a class="ds-baidu flat" href="javascript:void(0);" data-service="baidu">百度</a> </li>  <li> <a class="ds-taobao flat" href="javascript:void(0);" data-service="taobao">undefined</a> </li>  <li> <a class="ds-google flat" href="javascript:void(0);" data-service="google">谷歌</a> </li>  <li> <a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a> </li>  <li> <a class="ds-diandian flat" href="javascript:void(0);" data-service="diandian">undefined</a> </li>  <li> <a class="ds-huaban flat" href="javascript:void(0);" data-service="huaban">undefined</a> </li>  <li> <a class="ds-duitang flat" href="javascript:void(0);" data-service="duitang">undefined</a> </li>  <li> <a class="ds-youdao flat" href="javascript:void(0);" data-service="youdao">undefined</a> </li>  <li> <a class="ds-pengyou flat" href="javascript:void(0);" data-service="pengyou">undefined</a> </li>  <li> <a class="ds-facebook flat" href="javascript:void(0);" data-service="facebook">Facebook</a> </li>  <li> <a class="ds-twitter flat" href="javascript:void(0);" data-service="twitter">Twitter</a> </li>  <li> <a class="ds-linkedin flat" href="javascript:void(0);" data-service="linkedin">Linkedin</a> </li>  <li> <a class="ds-msn flat" href="javascript:void(0);" data-service="msn">undefined</a> </li>  </ul> </div> <div class="ds-share-icons-footer">多说分享插件</div></div></div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/04/09/hexo-guide/" data-title="使用Hexo搭建个人博客(基于hexo3.0)" data-url="http://opiece.me/2015/04/09/hexo-guide/" id="ds-thread">
+      <div id="ds-reset"><div class="ds-meta" style="display: none;"><a href="javascript:void(0)" class="ds-like-thread-button ds-rounded"><span class="ds-icon ds-icon-heart"></span> <span class="ds-thread-like-text">喜欢</span><span class="ds-thread-cancel-like">取消喜欢</span></a><span class="ds-like-panel"><span class="ds-highlight">2</span> 人喜欢</span></div><div class="ds-rounded" id="ds-hot-posts"><div class="ds-header ds-gradient-bg">被顶起来的评论</div><ul><li class="ds-post" data-post-id="6273350930209440514"><div class="ds-post-self" data-post-id="6273350930209440514" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar" data-user-id="6267489523966411521"><a rel="nofollow author" target="_blank" href="http://t.qq.com/Q410786550" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6267489523966411521&#39;;" title="William"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/265977.jpg" alt="William"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://t.qq.com/Q410786550" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6267489523966411521&#39;;" rel="nofollow" target="_blank" data-user-id="6267489523966411521">William</a><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-mac os"><i class="fa fa-apple"></i>Mac OS 10.11.4</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-safari"><i class="fa fa-safari"></i>Safari 9.1</span></div><p>bash: nmp: command not found请问这个问题怎么解决？</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2016-04-14T18:05:34+08:00" title="2016年4月14日 下午6:05:34">2016年4月14日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶(3)</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li><li class="ds-post" data-post-id="6354422421348418305"><div class="ds-post-self" data-post-id="6354422421348418305" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/noavatar_default.png" alt="慕名而来"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">慕名而来</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-mac os"><i class="fa fa-apple"></i>Mac OS 10.11.6</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 47.0.2526.80</span></div><p>博主你好，按照你的步骤一步一步的来，文章也发布到自己创建的github库了。。。但是打开xxx.github.io进入了404页面，为什么？</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2016-11-19T05:24:22+08:00" title="2016年11月19日 上午5:24:22">2016年11月19日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶(1)</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li></ul></div><div class="ds-comments-info"><div class="ds-sort"><a class="ds-order-desc ds-current">最新</a><a class="ds-order-asc">最早</a><a class="ds-order-hot">最热</a></div><ul class="ds-comments-tabs"><li class="ds-tab"><a class="ds-comments-tab-duoshuo ds-current" href="javascript:void(0);"><span class="ds-highlight">94</span>条评论</a></li>  </ul></div><ul class="ds-comments"><li class="ds-post" data-post-id="6390586974956159746"><div class="ds-post-self" data-post-id="6390586974956159746" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar" data-user-id="6375020831537365761"><a rel="nofollow author" target="_blank" href="http://t.qq.com/wuniu2010" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6375020831537365761&#39;;" title="薛山山"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/50" alt="薛山山"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://t.qq.com/wuniu2010" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6375020831537365761&#39;;" rel="nofollow" target="_blank" data-user-id="6375020831537365761">薛山山</a><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-mac os"><i class="fa fa-apple"></i>Mac OS 10.12.2</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 56.0.2924.87</span></div><p>好用</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2017-02-24T16:21:18+08:00" title="2017年2月24日 下午4:21:18">2月24日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li><li class="ds-post" data-post-id="6389761845946745601"><div class="ds-post-self" data-post-id="6389761845946745601" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar" data-user-id="6295203703519445761"><a rel="nofollow author" target="_blank" href="http://jiafuwei.win/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6295203703519445761&#39;;" title="蓝天"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/100" alt="蓝天"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://jiafuwei.win/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6295203703519445761&#39;;" rel="nofollow" target="_blank" data-user-id="6295203703519445761">蓝天</a><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 56.0.2924.87</span></div><p>学习了   为什么我配置SSH成功了  然后用 hexo d 命令发布的时候，还需要填写用户名密码呢？</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2017-02-22T10:59:23+08:00" title="2017年2月22日 上午10:59:23">2月22日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div><ul class="ds-children"><li class="ds-post" data-post-id="6390283067520451329"><div class="ds-post-self" data-post-id="6390283067520451329" data-thread-id="1268783641895370766" data-root-id="6389761845946745601" data-source="duoshuo"><div class="ds-avatar" data-user-id="11406932"><a rel="nofollow author" target="_blank" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" title="Chillax"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/100(1)" alt="Chillax"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" rel="nofollow" target="_blank" data-user-id="11406932">Chillax</a><span class="duoshuo-ua-admin">博主</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 52.0.2743.116</span></div><p>你需要把配置文件里面的发布方式改为git方式的</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2017-02-23T20:41:59+08:00" title="2017年2月23日 下午8:41:59">2月23日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li></ul></li><li class="ds-post" data-post-id="6383225018184106754"><div class="ds-post-self" data-post-id="6383225018184106754" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar" data-user-id="6380182630050038530"><a rel="nofollow author" target="_blank" href="http://t.qq.com/zcf527711323" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6380182630050038530&#39;;" title="谢俊鸿"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/100(2)" alt="谢俊鸿"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://t.qq.com/zcf527711323" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6380182630050038530&#39;;" rel="nofollow" target="_blank" data-user-id="6380182630050038530">谢俊鸿</a><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 10</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 55.0.2883.87</span></div><p>next主题就是好看~ 不过我感觉好像太多人用了</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2017-02-04T20:13:09+08:00" title="2017年2月4日 下午8:13:09">2月4日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div><ul class="ds-children"><li class="ds-post" data-post-id="6387243900796404482"><div class="ds-post-self" data-post-id="6387243900796404482" data-thread-id="1268783641895370766" data-root-id="6383225018184106754" data-source="duoshuo"><div class="ds-avatar" data-user-id="11406932"><a rel="nofollow author" target="_blank" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" title="Chillax"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/100(1)" alt="Chillax"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" rel="nofollow" target="_blank" data-user-id="11406932">Chillax</a><span class="duoshuo-ua-admin">博主</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 52.0.2743.116</span></div><p>是的，有时间你可以自己尝试自己修改。</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2017-02-15T16:08:28+08:00" title="2017年2月15日 下午4:08:28">2月15日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li></ul></li><li class="ds-post" data-post-id="6383142579927515906"><div class="ds-post-self" data-post-id="6383142579927515906" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar" data-user-id="6331664671753372418"><a rel="nofollow author" target="_blank" href="http://www.8dou5che.com/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6331664671753372418&#39;;" title="670550188"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/100(3)" alt="670550188"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://www.8dou5che.com/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6331664671753372418&#39;;" rel="nofollow" target="_blank" data-user-id="6331664671753372418">670550188</a><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-ios"><i class="fa fa-apple"></i>iOS 9.1</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-mobile safari"><i class="fa fa-undefined"></i>Mobile Safari 9.0</span></div><p>比ghost好呀</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2017-02-04T14:53:15+08:00" title="2017年2月4日 下午2:53:15">2月4日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li><li class="ds-post" data-post-id="6370996181849342722"><div class="ds-post-self" data-post-id="6370996181849342722" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/noavatar_default.png" alt="xxccmd"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">xxccmd</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 10</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-edge"><i class="fa fa-undefined"></i>Edge 14.14393</span></div><p>博主，你好。请问可以详细讲一下头像的地址怎么设置吗？我设置了自己github上面的头像地址不可以显示。希望博主回答，谢谢 <img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/zy_org.gif" alt="[挤眼]" title="[挤眼]" class="ds-smiley"> </p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2017-01-02T21:19:01+08:00" title="2017年1月2日 下午9:19:01">1月2日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div><ul class="ds-children"><li class="ds-post" data-post-id="6372379048718369537"><div class="ds-post-self" data-post-id="6372379048718369537" data-thread-id="1268783641895370766" data-root-id="6370996181849342722" data-source="duoshuo"><div class="ds-avatar" data-user-id="11406932"><a rel="nofollow author" target="_blank" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" title="Chillax"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/100(1)" alt="Chillax"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" rel="nofollow" target="_blank" data-user-id="11406932">Chillax</a><span class="duoshuo-ua-admin">博主</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 52.0.2743.116</span></div><p>你把头像放在本地目录，然后填本地地址就行了。例如我是放在E:\myblog\themes\next\source\images，如果是next主题，则在配置文件中的配置为<br>
+avatar: /images/avatar.gif</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2017-01-06T14:45:15+08:00" title="2017年1月6日 下午2:45:15">1月6日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li></ul></li><li class="ds-post" data-post-id="6366454186850124545"><div class="ds-post-self" data-post-id="6366454186850124545" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/noavatar_default.png" alt="xngeer"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">xngeer</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-mac os"><i class="fa fa-apple"></i>Mac OS 10.12.1</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 55.0.2883.95</span></div><p>http://opiece.me/2015/04/09/hexo-guide/  下面的链接 hexo系列教程：（二）搭建hexo博客 有问题，跳到不存在在地址了</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2016-12-21T15:33:46+08:00" title="2016年12月21日 下午3:33:46">2016年12月21日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div><ul class="ds-children"><li class="ds-post" data-post-id="6368392780590351105"><div class="ds-post-self" data-post-id="6368392780590351105" data-thread-id="1268783641895370766" data-root-id="6366454186850124545" data-source="duoshuo"><div class="ds-avatar" data-user-id="11406932"><a rel="nofollow author" target="_blank" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" title="Chillax"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/100(1)" alt="Chillax"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" rel="nofollow" target="_blank" data-user-id="11406932">Chillax</a><span class="duoshuo-ua-admin">博主</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 52.0.2743.116</span></div><p>这个可能是由于这个博客的博主域名没用了吧</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2016-12-26T20:56:30+08:00" title="2016年12月26日 下午8:56:30">2016年12月26日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li></ul></li><li class="ds-post" data-post-id="6354422421348418305"><div class="ds-post-self" data-post-id="6354422421348418305" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/noavatar_default.png" alt="慕名而来"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">慕名而来</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-mac os"><i class="fa fa-apple"></i>Mac OS 10.11.6</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 47.0.2526.80</span></div><p>博主你好，按照你的步骤一步一步的来，文章也发布到自己创建的github库了。。。但是打开xxx.github.io进入了404页面，为什么？</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2016-11-19T05:24:22+08:00" title="2016年11月19日 上午5:24:22">2016年11月19日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶(1)</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div><ul class="ds-children"><li class="ds-post" data-post-id="6356546033962451713"><div class="ds-post-self" data-post-id="6356546033962451713" data-thread-id="1268783641895370766" data-root-id="6354422421348418305" data-source="duoshuo"><div class="ds-avatar" data-user-id="6356542527142626050"><a rel="nofollow author" target="_blank" href="http://t.qq.com/hanpengcheng3389" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6356542527142626050&#39;;" title="人生只若初梦"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/100(4)" alt="人生只若初梦"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://t.qq.com/hanpengcheng3389" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6356542527142626050&#39;;" rel="nofollow" target="_blank" data-user-id="6356542527142626050">人生只若初梦</a><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 45.0.2454.101</span></div><p>我也是404.</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2016-11-24T22:45:04+08:00" title="2016年11月24日 下午10:45:04">2016年11月24日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div><ul class="ds-children"><li class="ds-post" data-post-id="6382791569421894402"><div class="ds-post-self" data-post-id="6382791569421894402" data-thread-id="1268783641895370766" data-root-id="6354422421348418305" data-source="duoshuo"><div class="ds-avatar"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/noavatar_default.png" alt="小冲冲"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">小冲冲</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 49.0.2623.22</span></div><p>我也是404</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2017-02-03T16:11:09+08:00" title="2017年2月3日 下午4:11:09">2月3日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li></ul></li><li class="ds-post" data-post-id="6389761970786009858"><div class="ds-post-self" data-post-id="6389761970786009858" data-thread-id="1268783641895370766" data-root-id="6354422421348418305" data-source="duoshuo"><div class="ds-avatar" data-user-id="6295203703519445761"><a rel="nofollow author" target="_blank" href="http://jiafuwei.win/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6295203703519445761&#39;;" title="蓝天"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/100" alt="蓝天"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://jiafuwei.win/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=6295203703519445761&#39;;" rel="nofollow" target="_blank" data-user-id="6295203703519445761">蓝天</a><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 56.0.2924.87</span></div><p>你没有生成静态页面吧</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2017-02-22T10:59:52+08:00" title="2017年2月22日 上午10:59:52">2月22日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li></ul></li><li class="ds-post" data-post-id="6354117913925911297"><div class="ds-post-self" data-post-id="6354117913925911297" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/noavatar_default.png" alt="小白一枚"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">小白一枚</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-firefox"><i class="fa fa-firefox"></i>Firefox 49.0</span></div><p>Node.js在这里有什么用？</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2016-11-18T09:42:43+08:00" title="2016年11月18日 上午9:42:43">2016年11月18日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li><li class="ds-post" data-post-id="6352872588347179778"><div class="ds-post-self" data-post-id="6352872588347179778" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/noavatar_default.png" alt="鲍涛"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">鲍涛</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 10</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-edge"><i class="fa fa-undefined"></i>Edge 13.10586</span></div><p>把本地仓库传到github上去是怎么做啊，本地仓库是指硬盘某个文件还是说？</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2016-11-15T01:10:13+08:00" title="2016年11月15日 上午1:10:13">2016年11月15日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div><ul class="ds-children"><li class="ds-post" data-post-id="6353113416365769473"><div class="ds-post-self" data-post-id="6353113416365769473" data-thread-id="1268783641895370766" data-root-id="6352872588347179778" data-source="duoshuo"><div class="ds-avatar" data-user-id="11406932"><a rel="nofollow author" target="_blank" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" title="Chillax"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/100(1)" alt="Chillax"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" rel="nofollow" target="_blank" data-user-id="11406932">Chillax</a><span class="duoshuo-ua-admin">博主</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 52.0.2743.116</span></div><p>hexo d就行了，本地仓库指在你硬盘存放博客文件的目录</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2016-11-15T16:44:45+08:00" title="2016年11月15日 下午4:44:45">2016年11月15日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li></ul></li><li class="ds-post" data-post-id="6346421975329538817"><div class="ds-post-self" data-post-id="6346421975329538817" data-thread-id="1268783641895370766" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/noavatar_default.png" alt="前端小白"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">前端小白</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 52.0.2743.116</span></div><p>看大神的文案 自己也搭建了一个hexo blog 感谢 求回复 求指导</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2016-10-28T15:58:33+08:00" title="2016年10月28日 下午3:58:33">2016年10月28日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div><ul class="ds-children"><li class="ds-post" data-post-id="6353113448276034305"><div class="ds-post-self" data-post-id="6353113448276034305" data-thread-id="1268783641895370766" data-root-id="6346421975329538817" data-source="duoshuo"><div class="ds-avatar" data-user-id="11406932"><a rel="nofollow author" target="_blank" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" title="Chillax"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/100(1)" alt="Chillax"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://opiece.me/" onclick="this.href=&#39;http://chillax.duoshuo.com/user-url/?user_id=11406932&#39;;" rel="nofollow" target="_blank" data-user-id="11406932">Chillax</a><span class="duoshuo-ua-admin">博主</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-platform duoshuo-ua-platform-windows"><i class="fa fa-windows"></i>Windows 7</span><span class="duoshuo-ua-separator"></span><span class="duoshuo-ua-browser duoshuo-ua-browser-chrome"><i class="fa fa-chrome"></i>Chrome 52.0.2743.116</span></div><p> <img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/tootha_org.gif" alt="[嘻嘻]" title="[嘻嘻]" class="ds-smiley"> </p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2016-11-15T16:44:53+08:00" title="2016年11月15日 下午4:44:53">2016年11月15日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li></ul></li></ul><div class="ds-paginator" style="display: block;"><div class="ds-border"></div><a data-page="1" href="javascript:void(0);" class="ds-current">1</a> <a data-page="2" href="javascript:void(0);">2</a> <a data-page="3" href="javascript:void(0);">3</a> <a data-page="4" href="javascript:void(0);">4</a> <a data-page="5" href="javascript:void(0);">5</a></div><a name="respond"></a><div class="ds-login-buttons"><p>社交帐号登录:</p><div class="ds-social-links"><ul class="ds-service-list"><li><a href="http://chillax.duoshuo.com/login/weixin/" rel="nofollow" class="ds-service-link ds-weixin">微信</a></li><li><a href="http://chillax.duoshuo.com/login/weibo/" rel="nofollow" class="ds-service-link ds-weibo">微博</a></li><li><a href="http://chillax.duoshuo.com/login/qq/" rel="nofollow" class="ds-service-link ds-qq">QQ</a></li><li><a href="http://chillax.duoshuo.com/login/renren/" rel="nofollow" class="ds-service-link ds-renren">人人</a></li><li><a class="ds-more-services" href="javascript:void(0)">更多»</a></li></ul><ul class="ds-service-list ds-additional-services"><li><a href="http://chillax.duoshuo.com/login/douban/" rel="nofollow" class="ds-service-link ds-douban">豆瓣</a></li><li><a href="http://chillax.duoshuo.com/login/kaixin/" rel="nofollow" class="ds-service-link ds-kaixin">开心</a></li><li><a href="http://chillax.duoshuo.com/login/baidu/" rel="nofollow" class="ds-service-link ds-baidu">百度</a></li><li><a href="http://chillax.duoshuo.com/login/google/" rel="nofollow" class="ds-service-link ds-google">谷歌</a></li></ul></div></div><div class="ds-replybox"><a class="ds-avatar" href="javascript:void(0);" onclick="return false"><img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/noavatar_default.png" alt=""></a><form method="post"><input type="hidden" name="thread_id" value="1268783641895370766">
+<input type="hidden" name="parent_id" value="">
+<input type="hidden" name="nonce" value="58d12fc4ccf90"><div class="ds-textarea-wrapper ds-rounded-top"><textarea name="message" title="Ctrl+Enter快捷提交" placeholder="说点什么吧…"></textarea><grammarly-btn><div style="visibility: hidden; z-index: 2;" class="_e725ae-textarea_btn _e725ae-anonymous _e725ae-not_focused" data-grammarly-reactid=".0"><div class="_e725ae-transform_wrap" data-grammarly-reactid=".0.0"><div title="Protected by Grammarly" class="_e725ae-status" data-grammarly-reactid=".0.0.0">&nbsp;</div></div><span class="_e725ae-btn_text" data-grammarly-reactid=".0.1">Not signed in</span></div></grammarly-btn><pre class="ds-hidden-text"></pre></div><div class="ds-post-toolbar"><div class="ds-post-options ds-gradient-bg"><span class="ds-sync"></span></div><button class="ds-post-button" type="submit">发布</button><div class="ds-toolbar-buttons"><a class="ds-toolbar-button ds-add-emote" title="插入表情"></a></div></div></form></div><p class="ds-powered-by"><a href="http://duoshuo.com/" target="_blank" rel="nofollow">chillax正在使用多说</a></p></div></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first" style="top: 5px; transform: rotateZ(-45deg); width: 100%;"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle" style="opacity: 0;"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last" style="top: -5px; transform: rotateZ(45deg); width: 100%;"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar sidebar-active" style="display: block; width: 320px;">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person" style="opacity: 1; display: block; transform: translateX(0px);">
+          <img class="site-author-image" itemprop="image" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/avatar.gif" alt="Chillax">
+          <p class="site-author-name" itemprop="name">Chillax</p>
+          <p class="site-description motion-element" itemprop="description" style="opacity: 1; display: block; transform: translateX(0px);">Goals determine what you are going to be</p>
+        </div>
+        <nav class="site-state motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+          <div class="site-state-item site-state-posts">
+            <a href="http://opiece.me/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="http://opiece.me/tags">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+            <a href="http://opiece.me/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license" style="opacity: 1; display: block; transform: translateX(0px);">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline" style="opacity: 1; display: block; transform: translateX(0px);">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/v123411739" title="Chillax" target="_blank">Chillax</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.vitostack.com/" title="Vito" target="_blank">Vito</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active" style="opacity: 1; display: block; transform: translateX(0px);">
+          <div class="post-toc" style="max-height: 177px; width: calc(100% + 17px);">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#动机"><span class="nav-number">2.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-2 active"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#正文"><span class="nav-number">3.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#安装Git"><span class="nav-number">3.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#安装Node-js"><span class="nav-number">3.2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#安装hexo"><span class="nav-number">3.3.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#注册Github帐号"><span class="nav-number">3.4.</span> <span class="nav-text">注册Github帐号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#创建repository"><span class="nav-number">3.5.</span> <span class="nav-text">创建repository</span></a></li><li class="nav-item nav-level-3 active active-current"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#部署本地文件到github"><span class="nav-number">3.6.</span> <span class="nav-text">部署本地文件到github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#hexo的配置文件"><span class="nav-number">3.7.</span> <span class="nav-text">hexo的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#发表一篇文章"><span class="nav-number">3.8.</span> <span class="nav-text">发表一篇文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#另一种发布到github的配置"><span class="nav-number">3.9.</span> <span class="nav-text">另一种发布到github的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#参考"><span class="nav-number">3.10.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="http://opiece.me/2015/04/09/hexo-guide/#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  ©  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chillax</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io/">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async="" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/busuanzi.pure.mini.js.下载"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv">60054</span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv">158106</span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top back-to-top-on">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/index.js.下载"></script>
+
+  
+  <script type="text/javascript" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/fastclick.min.js.下载"></script>
+
+  
+  <script type="text/javascript" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/jquery.lazyload.js.下载"></script>
+
+  
+  <script type="text/javascript" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/velocity.min.js.下载"></script>
+
+  
+  <script type="text/javascript" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/velocity.ui.min.js.下载"></script>
+
+  
+  <script type="text/javascript" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/jquery.fancybox.pack.js.下载"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/utils.js.下载"></script>
+
+  <script type="text/javascript" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/motion.js.下载"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/scrollspy.js.下载"></script>
+<script type="text/javascript" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/post-details.js.下载"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/bootstrap.js.下载"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chillax"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/ua-parser.min.js.下载"></script>
+    <script src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/hook-duoshuo.js.下载"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/av-core-mini-0.6.1.js.下载"></script>
+  <script>AV.initialize("xtCDepdVW3Lmp4SAzVGFtGPw-gzGzoHsz", "Ox61DbG9WCrfKGR5FjNKpEtW");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async="" src="./使用Hexo搭建个人博客(基于hexo3.0) _ Chillax&#39;s Blog_files/push.js.下载">
+</script>
+
+
+
+
+<audio controls="controls" style="display: none;"></audio><div class="st-injected-content-generated st-install-gngcYKRA61Ss_pfLd6uz" data-st-install-key="gngcYKRA61Ss_pfLd6uz" id="st-injected-content">
+<div class="st-ui-embed st-search-chrome-overlay-output st-search-escape-hide-outputs st-search-zoom-on-mobile" style="display: none;">
+    <div class="st-ui-overlay st-search-hide-outputs"></div>
+  <!-- Swiftype input and results overlay -->
+  <div class="st-ui-container st-ui-container-overlay  st-ui-injected-overlay-container ">
+    <!-- HEADER -->
+    <div class="st-ui-container-header_bar st-position-container">
+        <section class="st-ui-header">
+          <form>
+            <input class="st-default-search-input st-search-set-focus" type="text" value="" placeholder="Search this site" id="st-overlay-search-input" autocomplete="off" autocorrect="off" autocapitalize="off">
+          </form>
+          <span class="st-ui-search-icon"></span>
+
+            <a class="st-ui-close-button st-search-hide-outputs">Close</a>
+
+            <a class="st-ui-stamp" href="https://swiftype.com/" target="_blank">search by swiftype</a>
+        </section>
+    </div>
+
+    <!-- LEFT SIDEBAR -->
+    <div class="st-ui-container-left_sidebar st-position-container">
+      <div class="st-ui-injected-search-controls">
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="st-ui-container-right_sidebar st-position-container">
+      <div class="st-ui-injected-container-right_sidebar">
+        <div class="st-ui-injected-search-controls">
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIMARY CONTENT -->
+    <div class="st-ui-container-primary_content st-position-container">
+        <section class="st-ui-slide-autocomplete st-autocomplete-keyboard-navigable st-autocomplete-transient-on-select-and-results" data-st-target-element="#st-overlay-search-input" data-st-active-query-class="active" style="display: none;">
+          <span class="st-ui-type-heading-small">suggested results</span>
+          <div class="st-autocomplete-results"><div class="st-query-present" style="display: none;"></div></div>
+        </section>
+
+        <section class="st-ui-content st-search-results"><div class="st-query-not-present">
+          <span class="st-ui-fallback"></span>
+        </div><div class="st-query-present" style="display: none;"></div></section>
+
+      <section class="st-ui-no-results st-search-suggestions"><div class="st-query-not-present">
+      </div></section>
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <div class="st-ui-container-footer_bar st-position-container">
+      <section class="st-ui-footer">
+          <span class="st-ui-search-summary st-search-summary"></span>
+        <span class="st-ui-pagination st-search-pagination"></span>
+      </section>
+    </div>
+  </div>
+</div>
+<div class="st-default-autocomplete" data-st-target-element=".st-default-search-input" style="display: none; position: absolute; top: 5040.33px; left: 0px; z-index: 999999;">
+  <div class="st-autocomplete-results st-ui-autocomplete"><div class="st-query-present" style="display: none;"></div></div>
+</div>
+</div></body><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style><div style="visibility: hidden; top: -9999px; position: absolute; opacity: 0;"></div><div style="visibility: hidden; top: -9999px; position: absolute; opacity: 0;"></div><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
