@@ -1,13 +1,19 @@
-<<<<<<< HEAD
+
 body {
   margin: 0;
 }
-.header {
+
+.header-inner{
     background: #f5f5f5;
+    
 }
 .site-meta .site-title {
-    font-size: 22px;
-    font-weight: bolder;
+    font-size: 3em;
+    color: black;
+    margin: auto;
+    padding: 20%;
+    opacity: 1;
+    top: 10px;
 }
 .header-inner {
     margin-bottom: 80px;
@@ -31,7 +37,10 @@ body {
     list-style:none;
 }
 
-
+.post-toc{
+  max-height: 226px; 
+  width: calc(100% + 17px);
+}
 .menu .menu-item a {
     display: block;
     font-size: 13px;
@@ -42,6 +51,9 @@ body {
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
+}
+{
+  opacity: 1; display: block; transform: translateX(0px) translateY(0px)
 }
 article,
 aside,
@@ -60,17 +72,16 @@ summary {
 }
 
 div{
-	color: #999;
+  color: rgba(93, 90, 94, 0.25);
 }
 h1 {
     display: block;
     font-size: 2em;
     margin: auto;
-    color: rgba(0, 0, 0, 0.24);
+    color: #777;
     /* float: none; */
     padding: 1em;
     padding-bottom: 0.5em;
- 
     /* -webkit-margin-after: 0.67em; */
     /* -webkit-margin-start: 0px; */
     /* -webkit-margin-end: 0px; */
@@ -83,6 +94,10 @@ a:active,
 a:hover {
   outline: 0;
 }
+.site-subtitle{
+  border-left: 10em;
+  margin-left:50em;
+}
 .menu {
   margin-top: 20px;
   padding-left: 0;
@@ -90,12 +105,12 @@ a:hover {
 }
 .sidebar-inner
 {
-	position: fixed;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	width: 20%;
-	 z-index: 1040;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20%;
+   z-index: 1040;
   box-shadow: inset 0 2px 6px #000;
   background: #222;
   -webkit-transform: translateZ(0);
@@ -110,7 +125,7 @@ a:hover {
 }
 
 a:link{
-	text-decoration:none;
+  text-decoration:none;
 }
 
 .use-motion .motion-element {
@@ -141,29 +156,56 @@ a:link{
   border-bottom-color: #87daff;
 }
 .article-box {
-	width: 27%;
-	height: 20%;
-	background-color: rgba(219, 219, 219, 0.22);
-	float: left;
-	margin: auto;
+  width: 27%;
+  height: 17em;
+  background-color: hsla(278, 7%, 13%, 0.73);
+  float: left;
+  margin: auto;
+}
+.article-box:hover{
+  f  outline-style: solid;
+}
+.article-box-even{ 
+  background-color: #fffffd;
+}
+.article-box-odd h1{
+  color: white;
 }
 
-.article-box-even{
-	background-color: rgba(232, 232, 232, 0.74);
-}
 .article-content-view{
-	display: block;
-	overflow: auto;
-	padding: 0 0.7em;
-	width: inherit;
-	height: 6em;
-	margin: auto;
+  display: block;
+  overflow: auto;
+  padding: 0 0.7em;
+  width: inherit;
+  height: 9em;
+  margin: auto;
+  color: whitesmoke;
 }
+.article-box-even p{
+  color: black;
+  }
 .time-stamp{
-	
+  
 float: right;
-	
+  
 display: block;
-	
+  
 padding: 0 1em 1em;
+}
+.st-default-search-input{
+  margin-left: 3em;
+}
+nav{
+  background-color: white;
+  padding-left: 20px;
+}
+#sidebar:hover{
+  display:block;
+}
+
+/*editor*/
+.md-editor{
+  width: 80%;
+  position: absolute;
+  
 }
