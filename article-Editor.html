@@ -1,0 +1,453 @@
+
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<title>Hello World, My Name Is SuperWu</title>
+<script src="./Hello World, My Name Is SuperWu_files/jquery.min.js.下载"></script>
+<script src="./Hello World, My Name Is SuperWu_files/bootstrap.min.js.下载"></script>
+<link href="./Hello World, My Name Is SuperWu_files/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./BLOG.css">
+ <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-markdown.min.css">
+        <!-- 该文件控制图标显示 -->
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+
+<header id="header" class="header" itemscope="" itemtype="http:/header-inner/schema.org/WPHeader">
+      <div class=""><div class="site-meta ">  
+
+  <div class="custom-logo-site-title">
+    <a href="#" class="brand" rel="start" >
+     
+      <span class="site-title">Rick's Blog</span>
+      
+    </a>
+  </div>
+  <p class="site-subtitle" >Goals determine what you are going to be</p>
+</div>
+
+<div class="site-nav-toggle">
+ </div>
+ </div>
+ </header> 
+<body>
+	
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">     
+        
+        <li class="menu-item menu-item-home" >
+          <a href="#" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives"  >
+          <a href="#archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags"  >
+          <a href="#tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-message"  >
+          <a href="#message" rel="section">
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search"  >
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" autocomplete="off" autocorrect="off" autocapitalize="off">
+  <div id="article" class="article"><div id="post-2174" class="post-2174 post type-post status-publish format-standard hentry category-uncategorized post cat-1-id" data-date="2013 05 02" data-next="http://minimalmonkey.com/dynamic-bezel-lines-experiment/" data-previous="http://minimalmonkey.com/a-nice-recursion-example/" data-color="red">
+
+				<h1>CSS Transitions and old browser fallbacks</h1>
+				<span class="date small">2 May 2013</span>
+
+				<div class="post-content">
+					<p>Using CSS3 transitions are great. Supporting old browsers, not so great. As I stated in a <a href="https://twitter.com/minimalmonkey/status/328888187244130304">tweet</a> recently I think that for non-essential animations it’s fine to use CSS3 without a JavaScript fallback. If the user is viewing in an old browser like IE8, then stuff will just pop/snap without transitions. They still get to see all the content, we’re not depriving them of that, they just don’t get the nice transitions.</p>
+<p>Let’s take a simple image gallery like the one below. I’m using opacity and CSS3 Transitions to smoothly crossfade between images.</p>
+<div style="width: 100%; height: 0px; padding-bottom: 50%;">
+<iframe style="border: none;" name="sass-triangles" src="./Minimal Monkey - Hello my name is Stephen Burges222s_files/index.html" width="100%" height="450px" frameborder="0" scrolling="auto"></iframe>
+</div>
+<p>This gallery works great in modern browsers but when we remove CSS opacity and transition support there is an obvious issue – the user will continuously see the last image. We could use display: none; instead of opacity but then we won’t have our smooth transitions in modern browsers.</p>
+<p>The other fallback is to use a negative margin, e.g. margin-left: -99999px; That sort of works but in modern browsers there’s no fadeout transitions, or rather the transition happens, but off the page. You see the background color pop in then the image fades in, like this.</p>
+<div style="width: 100%; height: 0px; padding-bottom: 50%;">
+<iframe style="border: none;" name="sass-triangles" src="./Minimal Monkey - Hello my name is Stephen Burges222s_files/index-margin.html" width="100%" height="450px" frameborder="0" scrolling="auto"></iframe>
+</div>
+<p>It’s close but not as smooth as it could be by having the images crossfade. The trick is to keep the negative margin in, but add it with a delay to your transitions.</p>
+<p>When fading an image out we have a delay so we don’t adjust the margin until the fadeout is complete in modern browsers.</p>
+<div class="codecolorer-container css " style="overflow:auto;white-space:nowrap;width:100%"><div class="css codecolorer" style="font-family:Monaco,Lucida Console,monospace">transition<span class="sy0">:</span> opacity 1s<span class="sy0">,</span> <span class="kw1">margin-left</span> 0s linear 1s<span class="sy0">;</span></div></div>
+<p>Fading an image in, we remove the delay.</p>
+<div class="codecolorer-container css " style="overflow:auto;white-space:nowrap;width:100%"><div class="css codecolorer" style="font-family:Monaco,Lucida Console,monospace">transition<span class="sy0">:</span> opacity 1s<span class="sy0">,</span> <span class="kw1">margin-left</span> 0s<span class="sy0">;</span></div></div>
+<p>Now we get the nice crossfade in modern browsers, and when the transition is complete we set the negative margin so it also works in older browsers. The delay on the margin is ignored in older browser as transitions are not supported so we just pop between images. It’ll look like this.</p>
+<div style="width: 100%; height: 0px; padding-bottom: 50%;">
+<iframe style="border: none;" name="sass-triangles" src="./Minimal Monkey - Hello my name is Stephen Burges222s_files/index-ie8.html" width="100%" height="450px" frameborder="0" scrolling="auto"></iframe>
+</div>
+<p>But in modern browsers we get the nice smooth crossfade transitions as show in the first example up top.</p>
+<p>One thing to make sure of is that you have your transition properties in the correct order.</p>
+<div class="codecolorer-container css " style="overflow:auto;white-space:nowrap;width:100%"><div class="css codecolorer" style="font-family:Monaco,Lucida Console,monospace">transition<span class="sy0">:</span> <span class="br0">[</span> &lt;transition-property<span class="sy0">&gt;</span> ||<br>
+&lt;transition-duration<span class="sy0">&gt;</span> ||<br>
+&lt;transition-timing-function<span class="sy0">&gt;</span> ||<br>
+&lt;transition-delay<span class="sy0">&gt;</span> <span class="br0">]</span></div></div>
+<p>If not the delay will not work in certain browsers. Also, always ensure to specify the type after duration, even when using 0. For example, 0<strong>s</strong> or 0<strong>ms</strong>.</p>
+<p>I’ve put a simple working example of what I’m showing above on CodePen <a href="http://codepen.io/minimalmonkey/pen/ovezc">here</a>. Obviously this is dependant on client expectations on how the site should look/work in older browsers.</p>
+									</div><!--.post-content-->
+
+				<div id="comments" class="comments">
+	<!-- Prevents loading the file directly -->
+		
+	<!-- Password Required -->
+	
+	<div class="sharewrap">
+	<span class="wrap twrap"><iframe id="twitter-widget-4" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./Minimal Monkey - Hello my name is Stephen Burges222s_files/tweet_button.89bd237a86eeb0e8b1de842a4b88b09b.en.html" style="position: static; visibility: visible; width: 61px; height: 20px;"></iframe></span>
+	<span class="wrap fwrap"><div class="fb-share-button fb_iframe_widget" data-type="button" data-href="http://minimalmonkey.com/dynamic-bezel-lines-experiment/" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=519866454702231&amp;container_width=0&amp;href=http%3A%2F%2Fminimalmonkey.com%2Fdynamic-bezel-lines-experiment%2F&amp;locale=en_GB&amp;sdk=joey&amp;type=button"><span style="vertical-align: bottom; width: 58px; height: 20px;"><iframe name="f3136817a5fd2c8" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="./Minimal Monkey - Hello my name is Stephen Burges222s_files/share_button.html" style="border: none; visibility: visible; width: 58px; height: 20px;" class=""></iframe></span></div></span>
+	<span class="wrap gwrap"><div class="gplus-wrapper"><div id="___plusone_3" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 24px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I3_1490789609810" name="I3_1490789609810" src="./Minimal Monkey - Hello my name is Stephen Burges222s_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div></div></span>
+</div>	<span class="published">Published 2 May 2013</span>
+
+	
+	<div id="comments-form-wrapper" class="comments-form-wrapper">
+									<form action="http://minimalmonkey.com/wp-comments-post.php" method="post" id="commentform">
+								            	<p>
+								<input placeholder="Name (required)" type="text" name="author" id="author" value="" size="22" tabindex="1"><input class="right" placeholder="Email (required)" type="text" name="email" id="email" value="" size="22" tabindex="2">
+							</p>
+							<p>
+								<input class="website-input" placeholder="Website" type="text" name="url" id="url" value="" size="22" tabindex="3">
+							</p>
+													<p>
+								<textarea placeholder="Comment" name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea><grammarly-btn><div style="visibility: hidden; z-index: 2;" class="_e725ae-textarea_btn _e725ae-anonymous _e725ae-not_focused" data-grammarly-reactid=".9"><div class="_e725ae-transform_wrap" data-grammarly-reactid=".9.0"><div title="Protected by Grammarly" class="_e725ae-status" data-grammarly-reactid=".9.0.0">&nbsp;</div></div><span class="_e725ae-btn_text" data-grammarly-reactid=".9.1">Not signed in</span></div></grammarly-btn>
+							</p>
+							<p>
+								<input name="submit" type="submit" id="target-submit" tabindex="5" value="Submit Comment">
+								<input type="hidden" name="comment_post_ID" value="2174">
+							</p>
+				         <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="cffe4358e6"></p>			     </form>
+						</div><!--#commentsForm-->
+
+	
+	<!-- <div class="leave-comment-wrapper red"> -->
+					<div id="comments-button" class="comments-button red" data-post="Post comment">Join the conversation</div>
+			<!-- </div> -->
+
+
+	<ol>
+		    	    	 <!-- checks for comment type -->
+	    		    	    	 <!-- checks for comment type -->
+	    	 <!-- outputs only comments -->
+		        
+		        <li id="comment-1442" class="comment  ">
+
+		        	<div class="gravatar">
+		        		<img alt="" src="./Minimal Monkey - Hello my name is Stephen Burges222s_files/4fc94c72c1e623611c0560fd08d8f122" class="avatar avatar-60 photo" height="60" width="60">		        	</div>
+		        	<div class="comment-wrapper">
+		        		<span class="comment-author">Jiuck:</span>
+		        		<span class="comment-text"><p>It’s amazing what you can achieve with a few lines of code! Thanks for sharing this!</p>
+</span>
+		        		<span class="comment-date red-text">10 May 2013</span>
+		        	</div>
+		        	<div style="clear: both;"></div>
+
+		        </li>
+
+				    		</ol>
+	
+</div><!--#comments-->
+			</div></div>
+	<div id="labwrap" class="labwrap"></div>
+	<div id="panels" class="panels hover hide">
+
+		
+		
+		<a href="http://minimalmonkey.com/hello-world-im-still-here/" class="panel purple expand selected" data-color="purple" style="margin: 0px 898px 0px 0px;">
+			<div class="content">
+				<div class="fixed">
+					<span class="small">3 Jul 2014</span>
+					<h1>Hello World, I’m still here</h1>
+					<span class="excerpt"><p>Wow it’s been over a year since my last blog post so here’s a quick post to say hello</p>
+</span>
+					<span class="small read"><span class="icon">v</span>Read Article</span>
+				</div>
+			</div>
+			<div class="color">
+				<div class="footer"></div>
+			</div>
+		</a>
+
+		
+		
+		<a href="http://minimalmonkey.com/relocated-to-san-francisco/" class="panel orange shrink-right" data-color="orange">
+			<div class="content">
+				<div class="fixed">
+					<span class="small">22 May 2013</span>
+					<h1>Relocated to San Francisco</h1>
+					<span class="excerpt"><p>After 15 amazing months living in NYC I have moved west to the mecca of technology</p>
+</span>
+					<span class="small read"><span class="icon">v</span>Read Article</span>
+				</div>
+			</div>
+			<div class="color">
+				<div class="footer"></div>
+			</div>
+		</a>
+
+		
+		
+		<a href="http://minimalmonkey.com/dynamic-bezel-lines-experiment/" class="panel navy" data-color="navy">
+			<div class="content">
+				<div class="fixed">
+					<span class="small">14 May 2013</span>
+					<h1>Dynamic Bezel Lines</h1>
+					<span class="excerpt"><p>Dynamically created bezel lines experiment. Works with text or images with transparency</p>
+</span>
+					<span class="small read"><span class="icon">v</span>Read Article</span>
+				</div>
+			</div>
+			<div class="color">
+				<div class="footer"></div>
+			</div>
+		</a>
+
+		
+		
+		<a href="http://minimalmonkey.com/css-transitions-and-old-browser-fallbacks/" class="panel red" data-color="red">
+			<div class="content">
+				<div class="fixed">
+					<span class="small">2 May 2013</span>
+					<h1>Transition and old browsers</h1>
+					<span class="excerpt"><p>Using CSS3 transitions are great. Supporting old browsers, not so great. How to work with both</p>
+</span>
+					<span class="small read"><span class="icon">v</span>Read Article</span>
+				</div>
+			</div>
+			<div class="color">
+				<div class="footer"></div>
+			</div>
+		</a>
+
+		
+		
+		<a href="http://minimalmonkey.com/a-nice-recursion-example/" class="panel lime" data-color="lime">
+			<div class="content">
+				<div class="fixed">
+					<span class="small">3 Apr 2013</span>
+					<h1>A nice recursion example</h1>
+					<span class="excerpt"><p>Recursion is cool. This is me trying to explain what it is with a nice example</p>
+</span>
+					<span class="small read"><span class="icon">v</span>Read Article</span>
+				</div>
+			</div>
+			<div class="color">
+				<div class="footer"></div>
+			</div>
+		</a>
+
+		
+		
+		<a href="http://minimalmonkey.com/what-libraries-are-used-on-this-site/" class="panel green" data-color="green">
+			<div class="content">
+				<div class="fixed">
+					<span class="small">26 Mar 2013</span>
+					<h1>Libraries used on this site</h1>
+					<span class="excerpt"><p>What library did I use? How did I make it so fast and snappy? Here’s some of the answers</p>
+</span>
+					<span class="small read"><span class="icon">v</span>Read Article</span>
+				</div>
+			</div>
+			<div class="color">
+				<div class="footer"></div>
+			</div>
+		</a>
+
+		
+		
+		<a href="http://minimalmonkey.com/sass-triangle-mixin/" class="panel blue" data-color="blue">
+			<div class="content">
+				<div class="fixed">
+					<span class="small">6 Mar 2013</span>
+					<h1>SASS Triangle Mixin</h1>
+					<span class="excerpt"><p>A little SASS mixin to create pure CSS triangles &amp; a link to some awesome CSS3 mixins</p>
+</span>
+					<span class="small read"><span class="icon">v</span>Read Article</span>
+				</div>
+			</div>
+			<div class="color">
+				<div class="footer"></div>
+			</div>
+		</a>
+
+		
+		
+		<a href="http://minimalmonkey.com/fun-animations-with-css3/" class="panel purple" data-color="purple">
+			<div class="content">
+				<div class="fixed">
+					<span class="small">2 Mar 2013</span>
+					<h1>CSS3 Animation Effects</h1>
+					<span class="excerpt"><p>This is a short blog post on how I made some of the fun animations on this site</p>
+</span>
+					<span class="small read"><span class="icon">v</span>Read Article</span>
+				</div>
+			</div>
+			<div class="color">
+				<div class="footer"></div>
+			</div>
+		</a>
+
+		
+		
+		<a href="http://minimalmonkey.com/welcome-minimal-monkey/" class="panel orange" data-color="orange">
+			<div class="content">
+				<div class="fixed">
+					<span class="small">6 Feb 2013</span>
+					<h1>Welcome Minimal Monkey</h1>
+					<span class="excerpt"><p>Welcome to Minimal Monkey. A little intro and first blog post on the newly designed site</p>
+</span>
+					<span class="small read"><span class="icon">v</span>Read Article</span>
+				</div>
+			</div>
+			<div class="color">
+				<div class="footer"></div>
+			</div>
+		</a>
+
+		
+		
+		<a href="http://minimalmonkey.com/css-3d-cube-mobile/" class="panel navy shrink-left" data-color="navy">
+			<div class="content">
+				<div class="fixed">
+					<span class="small">30 Jul 2012</span>
+					<h1>CSS 3D Cube Mobile</h1>
+					<span class="excerpt"><p>A mobile version of the CSS 3D Cube I recently made with the code to show how it works</p>
+</span>
+					<span class="small read"><span class="icon">v</span>Read Article</span>
+				</div>
+			</div>
+			<div class="color">
+				<div class="footer"></div>
+			</div>
+		</a>
+
+		
+		<div class="next-button vertical">
+			<a href="http://minimalmonkey.com/page/2/"></a>		</div>
+
+	</div><!--#panels-->
+
+
+</form>
+
+
+    </div>
+  
+  </nav>
+  <div class="markdown">
+	<form>
+        <textarea name="content" data-provide="markdown" data-iconlibrary="fa" rows="10" id="editor"></textarea>
+    </form> 
+
+
+    <!-- 该jquery文件必须在bootstrap.min.js之前引入 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/markdown.js"></script>
+    <script src="js/to-markdown.js"></script>
+    <script src="js/bootstrap-markdown.js"></script>
+    <script src="js/bootstrap-markdown.fr.js"></script>
+    <script type="text/javascript">
+    //显示中文提示
+    (function ($) {
+      $.fn.markdown.messages.zh = {
+        'Bold': "粗体",
+        'Italic': "斜体",
+        'Heading': "标题",
+        'URL/Link': "链接",
+        'Image': "图片",
+        'List': "列表",
+        'Unordered List': "无序列表",
+        'Ordered List': "有序列表",
+        'Code': "代码",
+        'Quote': "引用",
+        'Preview': "预览",
+        'strong text': "粗体",
+        'emphasized text': "强调",
+        'heading text': "标题",
+        'enter link description here': "输入链接说明",
+        'Insert Hyperlink': "URL地址",
+        'enter image description here': "输入图片说明",
+        'Insert Image Hyperlink': "图片URL地址",
+        'enter image title here': "在这里输入图片标题",
+        'list text here': "这里是列表文本",
+        'code text here': "这里输入代码",
+        'quote here': "这里输入引用文本"
+      };
+    }(jQuery));
+    //初始化编辑器
+    $("#editor").markdown({
+        autofocus: true,
+        language: 'zh',
+    })
+    </script>
+  </form>
+  </div>
+    
+
+
+	<!--文章列表-->
+	
+       <aside id="sidebar" class="sidebar sidebar-active">
+    <div class="sidebar-inner">    
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>    
+ 
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+   
+		      <div class="post-toc-content">
+		      <ol class="nav">
+		      <li class="nav-item nav-level-2"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#前言">
+		      <span class="nav-number">1.</span> 
+		      <span class="nav-text">前言</span>
+		      </a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#动机"><span class="nav-number">2.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#正文"><span class="nav-number">3.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#安装Git"><span class="nav-number">3.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#安装Node-js"><span class="nav-number">3.2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#安装hexo"><span class="nav-number">3.3.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#注册Github帐号"><span class="nav-number">3.4.</span> <span class="nav-text">注册Github帐号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#创建repository"><span class="nav-number">3.5.</span> <span class="nav-text">创建repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#部署本地文件到github"><span class="nav-number">3.6.</span> <span class="nav-text">部署本地文件到github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#hexo的配置文件"><span class="nav-number">3.7.</span> <span class="nav-text">hexo的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#发表一篇文章"><span class="nav-number">3.8.</span> <span class="nav-text">发表一篇文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#另一种发布到github的配置"><span class="nav-number">3.9.</span> <span class="nav-text">另一种发布到github的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#参考"><span class="nav-number">3.10.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BINYAN/BLOG/BLOG.html#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+      
+
+    </div>
+  </aside>
+
+</body>
+</html>
