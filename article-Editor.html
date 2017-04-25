@@ -1,118 +1,109 @@
 
 <html lang="en-US">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="./js/BLOG.js"></script>
+    <meta charset="UTF-8">
+    <script src="./js/BLOG.js"></script>
     <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/marked.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/editor.css">
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./markdown/css/bootstrap-markdown.min.css">
+    <script src="./js/marked.js"></script>
+    <link rel="stylesheet" href="./css/editor.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./markdown/css/bootstrap-markdown.min.css">
         <!-- 该文件控制图标显示 -->
-    <link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
     <title>FBI Warnning</title>
   </head>
-  <body style="color:#777" background=D:\BINYAN\BLOG\BLOG\img\bkgnd.jpg >        
+  <body style="background-color:#fffddc" background=./img/bkgnd.jpg >        
     <div class="editor">
       <div id="artcle-title">
-        <span> 标题：<br></span>
-        <textarea class="e-post-title">text</textarea>
-      </div>
-      <div class="artcle-inner">       
+        <span> 标题：</span>
+        <input class="e-post-title" value="Title">
       </div>
       <div class="markdown">
         <form>
-          <textarea name="content" data-provide="markdown" data-iconlibrary="fa" rows="10" id="editor">
-             如果它们向左边歪头，表示它们可能在害怕什么东西。
-          </textarea>
+          <textarea name="content" data-provide="markdown" data-iconlibrary="fa" rows="10" id="editor"></textarea>
           <div class="e-btn-bar">
             <div class="e-sv-btn">
               <button>保存草稿</button>
             </div>  
-          <div class="e-publish-btn" >
-            <button>确认发布</button>
-          </div>
+            <div class="e-publish-btn" >
+              <button>确认发布</button>
             </div>
-          <script type="text/javascript" class="data-template">
-            <h3>这里是标题名称</h3>
-            <p>这里是文本内容</p>
-          </script> 
+          </div>
         </form> 
       </div>   
-    </div>
-        <!-- 该jquery文件必须在bootstrap.min.js之前引入 -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/markdown.js"></script>
-        <script src="js/to-markdown.js"></script>
-        <script src="js/bootstrap-markdown.js"></script>
-        <script src="js/bootstrap-markdown.fr.js"></script>
-        <script type="text/javascript">
-        //显示中文提示
-        (function ($) {
-          $.fn.markdown.messages.zh = {
-            'Bold': "粗体",
-            'Italic': "斜体",
-            'Heading': "标题",
-            'URL/Link': "链接",
-            'Image': "图片",
-            'List': "列表",
-            'Unordered List': "无序列表",
-            'Ordered List': "有序列表",
-            'Code': "代码",
-            'Quote': "引用",
-            'Preview': "预览",
-            'strong text': "粗体",
-            'emphasized text': "强调",
-            'heading text': "标题",
-            'enter link description here': "输入链接说明",
-            'Insert Hyperlink': "URL地址",
-            'enter image description here': "输入图片说明",
-            'Insert Image Hyperlink': "图片URL地址",
-            'enter image title here': "在这里输入图片标题",
-            'list text here': "这里是列表文本",
-            'code text here': "这里输入代码",
-            'quote here': "这里输入引用文本"
-          };
-        }(jQuery));
-        //初始化编辑器
-        $("#editor").markdown({
-            autofocus: true,
-            language: 'zh',
-        })
-        </script>
-        <style type="text/css">
-          a:hover{
-            text-decoration: underline;
-          }
-          body {
-              color: #777;
-          }
-          a{
-            color: #444;
-          }
-          a{
-            text-decoration: none;
-          }
-          a{
-            webkit-transition:all .3s ease;
-            transition: all .3s ease;
-                transition-property: all;
-                transition-duration: 0.3s;
-                transition-timing-function: ease;
-                transition-delay: initial;
-          }
-          a{
-            outline: 0;
-          }
-          a{
-            cursor: pointer;
-          }
-          a, .link-search .form, .img img, .more .date {
-              -webkit-transition: all .3s ease;
-              transition: all .3s ease;
-          }
-        </style>   
+    </div><!--编辑器-->
+    <!-- 该jquery文件必须在bootstrap.min.js之前引入 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/markdown.js"></script>
+    <script src="js/to-markdown.js"></script>
+    <script src="js/bootstrap-markdown.js"></script>
+    <script src="js/bootstrap-markdown.fr.js"></script>
+    <script type="text/javascript">
+    //显示中文提示
+    (function ($) {
+      $.fn.markdown.messages.zh = {
+        'Bold': "粗体",
+        'Italic': "斜体",
+        'Heading': "标题",
+        'URL/Link': "链接",
+        'Image': "图片",
+        'List': "列表",
+        'Unordered List': "无序列表",
+        'Ordered List': "有序列表",
+        'Code': "代码",
+        'Quote': "引用",
+        'Preview': "预览",
+        'strong text': "粗体",
+        'emphasized text': "强调",
+        'heading text': "标题",
+        'enter link description here': "输入链接说明",
+        'Insert Hyperlink': "URL地址",
+        'enter image description here': "输入图片说明",
+        'Insert Image Hyperlink': "图片URL地址",
+        'enter image title here': "在这里输入图片标题",
+        'list text here': "这里是列表文本",
+        'code text here': "这里输入代码",
+        'quote here': "这里输入引用文本"
+      };
+    }(jQuery));
+    //初始化编辑器
+    $("#editor").markdown({
+        autofocus: true,
+        language: 'zh',
+    })
+    </script>
+    <style>
+      a:hover{
+        text-decoration: underline;
+      }
+      body {
+          color: #777;
+      }
+      a{
+        color: #444;
+      }
+      a{
+        text-decoration: none;
+      }
+      a{
+        webkit-transition:all .3s ease;
+        transition: all .3s ease;
+            transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+            transition-delay: initial;
+      }
+      a{
+        outline: 0;
+      }
+      a{
+        cursor: pointer;
+      }
+      a, .link-search .form, .img img, .more .date {
+          -webkit-transition: all .3s ease;
+          transition: all .3s ease;
+      }
+    </style>   
   </body>
 </html>

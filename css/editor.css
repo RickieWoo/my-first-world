@@ -1,0 +1,19 @@
+.editor {
+	margin: 3em 0;
+}
+
+.e-btn-bar {
+	float: right;
+	margin: 1em;
+}
+
+.e-publish-btn,
+.e-sv-btn {
+	display: inline;
+	margin: 1em auto;
+	position: relative;
+}
+
+.markdown {
+	margin: 1em;
+}
