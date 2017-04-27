@@ -2,13 +2,16 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./markdown/css/bootstrap-markdown.min.css">
+		<!-- 该文件控制图标显示 -->
+		<link rel="stylesheet" href="./css/base.css">
+		<link rel="stylesheet" href="./css/index.css">
+		<link rel="stylesheet" href="./css/homepage.css">
 		<title>Hello World, My Name Is SuperWu</title>
-		<link rel="stylesheet" type="text/css" href="./css/BLOG.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<link rel="javascript" href="./js/BLOG.js">
-		<link rel="stylesheet" type="text/css" href="./css/homepage.css">
 	</head>
 	<body style="background-color: #FEEEDD;">
+	<!--Blog Introduce-->
 	    <header class="intro" style="background-color: #000;background-image: url(./img/img5.jpg);">
 	        <div class="intro-body">
 	            <div class="container">
@@ -25,6 +28,7 @@
 	            </div>
 	        </div>
 	    </header>
+	    <!--The Navagation-Bar on the top-->
 	  	<nav class="navbar-top navbar-top-custom navbar-top-fixed-top" role="navigation">
 	        <div class="container">
 	            <div class="collapse navbar-top-collapse navbar-top-right navbar-top-main-collapse">
@@ -38,10 +42,11 @@
 	            </div>
 	        </div>
 	    </nav>
+	    <!-- a space-room for fomat control-->
 	 	<div class="space-bar"></div>
+	 	<!-- newest article in blog-->
 		<div class="content" id="about">
-		<!--文章列表-->
-			<div post-id="23333" class="post-box post-box-odd">
+			<div data-id="23333" class="post-box post-box-odd">
 				<div class="post-inner">
 					<a href="#BINYAN/BLOG/BLOG.html#23333">
 						<h1 class="post-title">title1</h1>
@@ -50,7 +55,7 @@
 					</a>
 				</div>
 			</div>
-			<div post-id="23203" class="post-box post-box-even">
+			<div data-id="23203" class="post-box post-box-even">
 				<div class="post-inner">
 					<a href="#BINYAN/BLOG/BLOG.html#23333">
 						<h1 class="post-title">title1</h1>
@@ -59,7 +64,7 @@
 					</a>
 				</div>
 			</div>
-			<div post-id="23493" class="post-box post-box-odd">
+			<div data-id="23493" class="post-box post-box-odd">
 				<div class="post-inner">
 					<a href="#BINYAN/BLOG/BLOG.html#23333">
 						<h1 class="post-title">title1</h1>
@@ -68,7 +73,7 @@
 					</a>
 				</div>
 			</div>
-			<div post-id="23833" class="post-box post-box-even">
+			<div data-id="23833" class="post-box post-box-even">
 				<div class="post-inner">
 					<a href="#BINYAN/BLOG/BLOG.html#23333">
 						<h1 class="post-title">title1</h1>
@@ -77,7 +82,7 @@
 					</a>
 				</div>
 			</div>
-			<div post-id="23433" class="post-box post-box-odd">
+			<div data-id="23433" class="post-box post-box-odd">
 				<div class="post-inner">
 					<a href="#BINYAN/BLOG/BLOG.html#23333">
 						<h1 class="post-title">title1</h1>
@@ -86,7 +91,7 @@
 					</a>
 				</div>
 			</div>
-			<div post-id="23243" class="post-box post-box-even">
+			<div data-id="23243" class="post-box post-box-even">
 				<div class="post-inner">
 					<a href="#BINYAN/BLOG/BLOG.html#23333">
 						<h1 class="post-title">title1</h1>
@@ -95,7 +100,7 @@
 					</a>
 				</div>
 			</div>
-			<div post-id="23453" class="post-box post-box-odd">
+			<div data-id="23453" class="post-box post-box-odd">
 				<div class="post-inner">
 					<a href="#BINYAN/BLOG/BLOG.html#23333">
 						<h1 class="post-title">title1</h1>
@@ -104,7 +109,7 @@
 					</a>
 				</div>
 			</div>
-			<div post-id="3243" class="post-box post-box-even">
+			<div data-id="3243" class="post-box post-box-even">
 				<div class="post-inner">
 					<a href="#BINYAN/BLOG/BLOG.html#23333">
 						<h1 class="post-title">title1</h1>
@@ -114,5 +119,8 @@
 				</div>
 			</div>
 		</div>
+		<!--  js  -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="./js/BLOG.js"></script>
 	</body>
 </html>
