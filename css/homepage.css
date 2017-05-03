@@ -100,7 +100,7 @@ p {
 .btn-circle {
     width: 70px;
     height: 70px;
-    margin-top: 15px;
+    margin: 15px;
     padding: 7px 16px;
     border: 2px solid #fff;
     border-radius: 35px;
@@ -136,6 +136,33 @@ p {
     -webkit-animation-timing-function: linear;
     -moz-animation-timing-function: linear;
 }
+
+.content-section {
+    padding-top: 100px;
+}
+
+.download-section {
+    width: 100%;
+    padding: 50px 0;
+    color: #fff;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#map {
+    width: 100%;
+    height: 200px;
+    margin-top: 100px;
+}
+
+
+ul.banner-social-buttons {
+    margin-top: 0;
+}
+
 
 @-webkit-keyframes pulse {    
     0 {
@@ -181,32 +208,6 @@ p {
     .navbar-custom.top-nav-collapse {
         border-bottom: 1px solid rgba(255,255,255,.3);
     }
-}
-
-.content-section {
-    padding-top: 100px;
-}
-
-.download-section {
-    width: 100%;
-    padding: 50px 0;
-    color: #fff;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-#map {
-    width: 100%;
-    height: 200px;
-    margin-top: 100px;
-}
-
-
-ul.banner-social-buttons {
-    margin-top: 0;
 }
 
 @-moz-keyframes pulse {    

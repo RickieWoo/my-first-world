@@ -1,9 +1,4 @@
-* {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
+/*remove the default css about underline and color*/
 a {
   background-color: transparent;
   color: #fffddc;
@@ -16,16 +11,16 @@ a:link {
   text-decoration:none;
 }
 
-body {
-  margin: 0;
-}
-
 .brand-heading {
   color: #fffddc;
 }
 
 .content {
+  display: inline;
   margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 
 h1 {
@@ -113,21 +108,18 @@ h1 {
   margin-left: 10px;
 }
 
-.post {
-  display: block;
-  margin: 0 auto;
-}
-
 .post-box {
     background-color: #E1DFF0;
     border: #D5ACBD;
-    display: inline-block; 
-    float: left;
+    display: inline-block;    
     height: 100%;
     margin: 3em 7em;
     overflow: auto; 
     transition: .6s;   
     width:30%;       
+}
+.post-box-even{
+  
 }
 .post-box:hover {
     background-color: #DBE2EF;
