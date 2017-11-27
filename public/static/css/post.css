@@ -1,0 +1,161 @@
+.a-fadein {
+    webkit-annimation:fadein 1s;
+    animation: fadein 1s;
+}
+
+.article{	
+    background-color:#fff;
+    filter: alpha(opacity=30);	
+	margin: 0 auto;
+	min-height: 400px;
+    opacity:0.9;
+    padding: 60px 25px 50px;
+	width: 75%; 
+}
+
+.article-inner {
+    position: relative;
+    zoom:1;
+    font-size: 12px;
+    line-height: 26px;
+}
+
+body {
+    word-wrap: break-word; 
+    font: 12px/200% "Hiragino Sans GB","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+    color: #777;
+}
+
+.box {
+    zoom:1;
+}
+
+.box:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+.icon {
+    margin: 0 0 40px;
+}
+
+input {
+    background-color: white;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    cursor: auto;
+    display: none;
+    -webkit-appearance: textfield;
+    -webkit-rtl-ordering: logical;
+    -webkit-writting-mode:horizontal-tb; 
+    padding: 1px;   
+    user-select: text;   
+}
+
+li{
+    list-style: none;
+}
+
+.link-search {
+	position: relative;
+}
+.link-search .form {
+	border:1px solid #948c76;	
+	left: 0;
+	padding: 0 10px;
+    position: absolute;
+    top: 0;	
+	opacity: 0;
+	visibility: hidden;
+}
+
+.link-search .form,
+.link-search .txt {
+	height: 22px;
+	line-height: 22px;
+    width: 0;
+}
+
+.markdown{
+    bottom: 1em;
+    display: block;
+    float:left;
+    max-height: 17em;
+    padding-top: 20em;
+    right: 17em;
+    position: relative;
+    -webkit-transform: scale(0.5);
+}
+
+.top-nav {
+    background-color: #fff;
+    border-bottom: solid;   
+    filter: alpha(opacity=30);  
+    max-width: 75%;
+    margin:0 auto;
+    padding: 60px 0;
+    width: 900px;
+    opacity: 0.7;
+}
+
+.icon,
+.head-title,
+.top-nav-sub {
+    text-align: center;
+}
+.top-nav-sub li {
+    margin:6px 10px;
+}
+.top-nav-sub li,
+.top-nav-sub a {
+    display: inline-block;
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.pager a {
+	border-radius: 5px;
+    padding: 20px 14px;
+    border: 2px solid #E7E7E7;
+    font-size: 24px;
+    line-height: 12px;
+    opacity: .5;
+}
+.pager .prev {
+    float: left;
+}
+.pager .next {
+	float: right;
+}
+
+ul{
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}

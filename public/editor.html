@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/markdown/css/bootstrap-markdown.min.css">
+    <!-- 该文件控制图标显示 -->
+    <link rel="stylesheet" href="./static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./static/css/base.css">
+    <link rel="stylesheet" href="./static/css/editor.css">
+    <title>FBI Warnning</title>
+</head>
+
+<body style="background-color:#fffddc" background="./static/img/img4.jpg" ng-controller="AppCtrl">
+    <div class="editor">
+        <div id="artcle-title">
+            <span> 标题：</span>
+            <input class="e-post-title" value="Title" ng-model="source.title">
+        </div>
+        <div class="markdown">
+            <form>
+                <textarea name="content" data-provide="markdown" data-iconlibrary="fa" rows="10" id="editor" ng-model="source.content"></textarea>
+                <div class="e-btn-bar">
+                    <div class="e-sv-btn">
+                        <button ng-click="addSource()">保存草稿</button>
+                    </div>
+                    <div class="e-publish-btn">
+                        <button ng-click="update()">确认更新</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sources Title</th>
+                <th>time</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="source in sourceList">
+                <td><b>{{source.title}}</b></td>
+                <td>{{source.time}}</td>
+                <td><button class="btn btn-danger" ng-click="removeSource(source.id)">Remove</button></td>
+                <td><button class="btn btn-warning" id="editBtn" ng-click="editSource(source.id)">Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <!--编辑器-->
+    <!-- js File -->
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js "></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.js "></script>
+    <!-- <script src="./static/js/marked.js"></script> -->
+    <!-- 该jquery文件必须在bootstrap.min.js之前引入 -->
+    <script src="./static/js/jquery.min.js"></script>
+    <script src="./static/js/bootstrap.min.js"></script>
+    <script src="./static/js/markdown.js"></script>
+    <script src="./static/js/to-markdown.js"></script>
+    <script src="./static/js/bootstrap-markdown.js"></script>
+    <script src="./static/js/bootstrap-markdown.fr.js"></script>
+    <script src="./controllers/controller.js "></script>
+    <script type="text/javascript">
+        //显示中文提示
+        (function($) {
+            $.fn.markdown.messages.zh = {
+                'Bold': "粗体",
+                'Italic': "斜体",
+                'Heading': "标题",
+                'URL/Link': "链接",
+                'Image': "图片",
+                'List': "列表",
+                'Unordered List': "无序列表",
+                'Ordered List': "有序列表",
+                'Code': "代码",
+                'Quote': "引用",
+                'Preview': "预览",
+                'strong text': "粗体",
+                'emphasized text': "强调",
+                'heading text': "标题",
+                'enter link description here': "输入链接说明",
+                'Insert Hyperlink': "URL地址",
+                'enter image description here': "输入图片说明",
+                'Insert Image Hyperlink': "图片URL地址",
+                'enter image title here': "在这里输入图片标题",
+                'list text here': "这里是列表文本",
+                'code text here': "这里输入代码",
+                'quote here': "这里输入引用文本"
+            };
+        }(jQuery));
+        //初始化编辑器
+        $("#editor").markdown({
+            autofocus: true,
+            language: 'zh',
+        })
+    </script>
+    <style>
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        body {
+            color: #777;
+        }
+        
+        a {
+            color: #444;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a {
+            webkit-transition: all .3s ease;
+            transition: all .3s ease;
+            transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+            transition-delay: initial;
+        }
+        
+        a {
+            outline: 0;
+        }
+        
+        a {
+            cursor: pointer;
+        }
+        
+        a,
+        .link-search .form,
+        .img img,
+        .more .date {
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+    </style>
+
+</body>
+
+</html>

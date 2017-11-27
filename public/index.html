@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/markdown/css/bootstrap-markdown.min.css">
+    <!-- 该文件控制图标显示 -->
+    <link rel="stylesheet" href="./static/css/base.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/homepage.css">
+    <title>Hello World, My Name Is SuperWu</title>
+</head>
+
+<body style="background-color: #FEEEDD;" ng-controller="AppCtrl">
+    <!--Blog Introduce-->
+    <header class=" intro " style="background-image: url(./static/img/img5.jpg); ">
+        <div class="intro-body ">
+            <div class="container ">
+                <div class="row " style="position:relative; ">
+                    <div class="col-md-8 col-md-offset-2 text-center ">
+                        <h1 class="brand-heading ">Rickie's Blog</h1>
+                        <p class="intro-text ">Rick &amp; SuperWu</p>
+                        <ul class="list-inline banner-social-buttons "></ul>
+                        <a href="#space-bar " class="btn btn-circle page-scroll ">
+                            <i class="fa fa-angle-double-down animated "></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--The Navagation-Bar on the top-->
+    <nav class="navbar-top navbar-top-custom navbar-top-fixed-top " role="navigation ">
+        <div class="container ">
+            <div class="collapse navbar-top-collapse navbar-top-right navbar-top-main-collapse ">
+                <ul class="nav navbar-top-nav ">
+                    <li class="menu-item menu-item-home "><a href="# " rel="section ">首页</a></li>
+                    <li class="menu-item menu-item-home "><a href="# " rel="section ">归档</a></li>
+                    <li class="menu-item menu-item-home "><a href="# " rel="section ">标签</a></li>
+                    <li class="menu-item menu-item-home "><a href="# " rel="section ">留言</a></li>
+                    <li class="menu-item menu-item-search "><a href="javascript:; " class="st-search-show-outputs "> 搜索</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- a space-room for fomat control-->
+    <div id="space-bar "></div>
+    <!-- newest article in blog-->
+    <div class="content " id="about " ng-repeat="source in sourceList ">
+        <div data-id="{{source._id}}" class="post-box ">
+            <div class="post-inner ">
+                <div class="post-title ">
+                    <h1>
+                        <a href="./content#{{source.id}}">{{source.title}}</a>
+                    </h1>
+                    <b class="time-stamp">{{source.time}}</b>
+                </div>
+                <div class="post-content-view" ng-bind-html="source.content">
+                    {{source.content}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- js 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js "></script>
+    <script src="./js/BLOG.js "></script> -->
+</body>
+<footer>concact:kylin792884522@gmail.com</footer>
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js "></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js "></script>
+<script src="https://cdn.bootcss.com/angular.js/1.5.0-beta.0/angular-sanitize.min.js"></script>
+<script src="./controllers/controller.js "></script>
+<script src="./static/js/view- markdown.js "></script>
+<script src="./static/index.js "></script>
+<!-- <script src=" https://cdnjs.cloudflare.com/ajax/libs/showdown/<version tag>/showdown.min.js"></script> -->
+<script>
+    $(function() { 
+        viewpost({{source.id}});
+        });
+</script>
+</html>
